@@ -1,0 +1,16 @@
+<app-navbar [notUser]="true"></app-navbar>
+<div class="container">
+  <div class = "home__content">
+    <h1>
+      <b>Welcome at Santa Cloud Platform</b>
+    </h1>
+    <h3>
+      Merry Chrismas
+    </h3>
+    <div class="home__btn">
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active"  style="margin-right: 4em;"> Login </a>
+      <a [routerLink]="['/']" routerLinkActive="router-link-active" > Sign In </a>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
