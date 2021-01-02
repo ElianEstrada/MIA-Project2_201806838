@@ -6,10 +6,9 @@ const childRouter = require('./routes/child.route');
 const loginRouter = require('./routes/login.router');
 
 var app = express();
-
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(cors())
 app.use("/users", userRouter);
 app.use("/childs", childRouter);
 app.use("", loginRouter);
