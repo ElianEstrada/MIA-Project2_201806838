@@ -10,7 +10,7 @@
 }
 
 .form__content__input{
-    padding: 50px 70px;
+    padding: 0px 70px 50px;
 }
 
 .form__content__input input{
@@ -20,4 +20,8 @@
 
 button{
     size: 30px;
+}
+
+select, option{
+    color: red;
 }

@@ -1,0 +1,23 @@
+.form__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 80vh;
+    color: rgb(255, 255, 255);
+}
+
+.form__content__input{
+    padding: 0px 70px 50px;
+}
+
+.form__content__input input{
+    color: white;
+    font-size: 20px;
+}
+
+button{
+    size: 30px;
+}

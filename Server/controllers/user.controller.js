@@ -9,9 +9,13 @@ exports.addUsers = async (req, res) => {
     userType,
     municipality,
     department,
+    longitude,
+    latitude,
+    description
   } = req.body;
 
-  let query = `begin addUser('${name}', '${email}', '${password}', '${telephone}', '${userType}', '${municipality}', '${department}'); end;`;
+  let query = `begin addUser('${name}', '${email}', '${password}', ${telephone}, ${userType}, ${municipality}, ${department}, ${longitude}, 
+  ${latitude}, '${description}'); end;`;
   try {
     await dataB.Open(query, [], false);
 

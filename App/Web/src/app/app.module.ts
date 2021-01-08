@@ -11,6 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { LoginService } from './services/login/login.service';
+import { SigninComponent } from './components/signin/signin.component';
+import { PrincipalComponent } from './components/principal/principal.component';
+import { BulkloadComponent } from './components/bulkload/bulkload.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { LoginService } from './services/login/login.service';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    SigninComponent,
+    PrincipalComponent,
+    BulkloadComponent
   ],
   imports: [
     BrowserModule,

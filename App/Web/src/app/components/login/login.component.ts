@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login/login.service'
 
 @Component({
@@ -40,13 +40,21 @@ export class LoginComponent implements OnInit {
     let object = JSON.parse(JSON.stringify(result));
 
     if (auth){
-      console.log(object.child);
-      localStorage.setItem("user", JSON.stringify(object.child))
-      this.navegation.navigate(['home'])
+      console.log(object.user);
+      localStorage.setItem("user", JSON.stringify(object.user))
+      this.navegation.navigate(['principal'])
     }else{
       this.authentify = false
     }
 
+  }
+
+  admin(){
+    if (this.movil){
+      this.movil = false;
+    }else{
+      this.movil = true;
+    }
   }
 
 }

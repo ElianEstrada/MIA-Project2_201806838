@@ -9,7 +9,13 @@ exports.login = async (req, res) => {
     try {
       let result = await dataB.Open(query, [], false);
       if (result.rows.length !== 0) {
-        res.json({ Info: `Welcome user ${result.rows[0][1]}` });
+        let user = {
+          code: result.rows[0][0],
+          name: result.rows[0][1], 
+          userType: result.rows[0][5]
+      }
+      
+      res.json({user, Auth: "true"});
       } else {
         res.json({ Info: "The user doesn't exist" });
       }
@@ -23,13 +29,13 @@ exports.login = async (req, res) => {
       let result = await dataB.Open(query, [], false);
       if (result.rows.length !== 0) {
 
-        let child = {
+        let user = {
             code: result.rows[0][0],
             nicikName: result.rows[0][2],
             budget: result.rows[0][5],
         }
         
-        res.json({child, Auth: "true"});
+        res.json({user, Auth: "true"});
       } else {
         res.json({ Info: "The user doesn't exist" });
       }

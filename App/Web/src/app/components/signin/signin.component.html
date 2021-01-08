@@ -1,0 +1,141 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row form__content">
+    <form class="card-content col s12">
+      <div class="row card z-depth-3 form__content__input">
+        <div class="row">
+          <h1><b> Registry </b></h1>
+          <div class="input-field col s6">
+            <i class="material-icons prefix black-text">account_circle</i>
+            <input
+              placeholder="Name"
+              name="name"
+              [(ngModel)]="name"
+              (keyup.enter)="name = ''"
+              type="text"
+              class="validate"
+            />
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix black-text">email</i>
+            <input
+              placeholder="Email"
+              name="email"
+              [(ngModel)]="email"
+              (keyup.enter)="email = ''"
+              type="email"
+              class="validate"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col l6 s12">
+            <i class="material-icons prefix black-text">vpn_key</i>
+            <input
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="password"
+              (keyup.enter)="password = ''"
+              type="password"
+              class="validate"
+            />
+          </div>
+          <div class="input-field col l6 s12">
+            <i class="material-icons prefix black-text">local_phone</i>
+            <input
+              placeholder="Telephone Number"
+              name="phone"
+              [(ngModel)]="phone"
+              (keyup.enter)="phone = 0"
+              type="number"
+              class="validate"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col l6 s12">
+            <select
+              class="browser-default"
+              [(ngModel)]="department"
+              name="department"
+              (change)="getMunicipality()"
+            >
+              <option [value]="0" disabled selected>Choose Department</option>
+              <option [value]="item.value" *ngFor="let item of departments">
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+          <div class="input-field col l6 s12">
+            <select
+              class="browser-default"
+              [(ngModel)]="municipality"
+              name="municipality"
+            >
+              <option [value]="0" disabled selected>Choose Municipality</option>
+              <option [value]="item.value" *ngFor="let item of municipalitys">
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix black-text">description</i>
+              <input placeholder="Description" 
+              [(ngModel)]="description"
+              name="description"
+              type="text" 
+              class="validate" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix black-text">location_searching</i>
+              <input
+                placeholder="Longitude"
+                type="number"
+                step="0.00000001"
+                name="longitude"
+              [(ngModel)]="longitude"
+                class="validate"
+              />
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix black-text">location_searching</i>
+              <input
+                placeholder="Latitude"
+                type="number"
+                step="0.00000001"
+                name="latitude"
+              [(ngModel)]="latitude"
+                class="validate"
+              />
+            </div>
+            <div>
+              <button
+                class="btn-large waves-effect waves-light green"
+                (click)="signin()"
+                [disabled]="
+                  email === '' ||
+                  password === '' ||
+                  name === '' || phone === undefined ||
+                  department === 0 || municipality === 0
+                  || description === ''
+                "
+              >
+                SIGN IN
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="error">
+        <div class="red">
+          <h4>
+            Error in to Registry
+          </h4>
+        </div>
+      </div>
+  </div>
+</div>

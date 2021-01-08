@@ -1,0 +1,32 @@
+<app-navbar [admin]="true"></app-navbar>
+<div class="container">
+  <div class="form__content">
+    <form class="col s12">
+      <div class="row form__content__input">
+        <div class="col s12">
+          <h1>
+            <b>Choose File</b>
+          </h1>
+        </div>
+        <div class="file-field input-field col s12">
+          <div class="btn">
+            <i class="material-icons">file_upload</i>
+            <input type="file" (change)="upload($event)"/>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" name="fileName" (change)="enable()"/>
+          </div>
+        </div>
+        <div>
+            <button
+              class="btn-large waves-effect waves-light green"
+              (click) = "loadFile()"
+              [disabled] ="fileName === ''"
+            >
+              Load
+            </button>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>
