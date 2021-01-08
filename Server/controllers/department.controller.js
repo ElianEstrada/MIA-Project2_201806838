@@ -1,7 +1,7 @@
 const dataB = require("../config/oracleConnection");
 
 exports.getDepartment = async (req, res) => {
-    let query = "select * from Department";
+    let query = "select * from Department d order by d.COD_DEPARTMENT";
     
     try {
         
@@ -27,7 +27,7 @@ exports.getDepartment = async (req, res) => {
 
 exports.getMunicipality = async (req, res) =>{
     const { department } = req.body
-    let query = `select * from Municipality where cod_department =  ${department}`
+    let query = `select * from Municipality m where cod_department =  ${department} order by m.cod_municipality`
 
     try {
         

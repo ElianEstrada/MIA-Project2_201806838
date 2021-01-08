@@ -10,6 +10,8 @@ export class BulkloadComponent implements OnInit {
 
   file: File =null;
   fileName: string;
+  bulkload: boolean;
+  response: boolean;
 
   constructor(public bulkloadService: BulkloadService) { 
     this.fileName = ''
@@ -36,8 +38,17 @@ export class BulkloadComponent implements OnInit {
   }
 
   async loadFile(){
+    this.response = true;
     let result = await this.bulkloadService.load(this.file);
     console.log(result);
+
+    if (result.hasOwnProperty("Load")){
+      this.bulkload = true;
+    }else{
+      this.bulkload = false;
+      this.response = false;
+    }
+
   }
 
 }

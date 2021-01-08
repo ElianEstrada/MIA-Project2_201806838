@@ -43,5 +43,6 @@ App/Web/src/environments
 App/Web/src/test.ts
 
 *.csv
+*.txt
 
 /.vscode

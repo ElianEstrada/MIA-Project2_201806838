@@ -5,13 +5,14 @@ readline = require('readline');
 exports.load = async (req, res) =>{
     const file = req.files;
     let query = "truncate table TEMPORAL"
+    let query2 = "begin bulk_load2; end;"
     try {
         let array = [];
         let count = 0;
 
         await dataB.Open(query, [], false);
 
-        fs.readFile(file.fileKey.path, 'utf8', (err, data) =>{
+        fs.readFile(file.fileKey.path, 'utf8', async (err, data) =>{
             console.log("Entro");
             if(err){
                 console.log(err);
@@ -19,8 +20,10 @@ exports.load = async (req, res) =>{
             }
 
             array = data.split("\r\n");
-            validation(array);
-            res.json({})
+            await validation(array);
+            await dataB.Open(query2,[], false);
+
+            res.json({"Load": "Bulk-load successfully"});
         })
 
     } catch (err) {
