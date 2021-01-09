@@ -14,6 +14,8 @@ import { LoginService } from './services/login/login.service';
 import { SigninComponent } from './components/signin/signin.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { BulkloadComponent } from './components/bulkload/bulkload.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { BulkloadComponent } from './components/bulkload/bulkload.component';
     LoginComponent,
     SigninComponent,
     PrincipalComponent,
-    BulkloadComponent
+    BulkloadComponent,
+    ProductsComponent,
+    ProfilesComponent
   ],
   imports: [
     BrowserModule,

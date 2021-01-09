@@ -49,9 +49,8 @@ exports.getChild = async (req, res) => {
 exports.deleteChild = async (req, res) =>{ 
   const codeChild = req.params.code
   let query = `begin deleteChild(${codeChild}); end;`
-  console.log(query);
   try {
-      result = await dataB.Open(query, [], false);
+      result = await dataB.Open(query, [], true);
       console.log(result);
       res.json({"Info": "The Child delete successfully"})
   }
@@ -63,14 +62,12 @@ exports.deleteChild = async (req, res) =>{
 
 exports.modifyChild = async (req, res) =>{
   const code = req.params.code;
-  const {name, nickName, budget } = req.body;
+  const {name, nickName, password, budget, birthDate, gender } = req.body;
 
-  let query = `begin modifyChild(${code}, '${name}', '${nickName}', '${budget}'); end;`;
-  console.log(query);
+  let query = `begin modifyChild(${code}, '${name}', '${nickName}', '${password}', '${budget}', '${birthDate}', ${gender}); end;`;
 
   try{
-    result = await dataB.Open(query, [], false);
-    console.log(result);
+    result = await dataB.Open(query, [], true);
     res.json({"Info": "The child modify successfully"});
   }
   catch(err){

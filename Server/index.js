@@ -7,6 +7,7 @@ const childRouter = require('./routes/child.route');
 const loginRouter = require('./routes/login.router');
 const departmentRouter = require('./routes/department.route');
 const loadRouter = require('./routes/load.route');
+const productRouter = require('./routes/product.route');
 
 var app = express();
 app.use(cors())
@@ -18,6 +19,7 @@ app.use("/childs", childRouter);
 app.use("", loginRouter);
 app.use("", departmentRouter);
 app.use("/load", loadRouter);
+app.use("/products", productRouter);
 
 const port = 3000;
 

@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component'
 import { SigninComponent } from './components/signin/signin.component'
 import { PrincipalComponent } from './components/principal/principal.component';
 import { BulkloadComponent } from './components/bulkload/bulkload.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProfilesComponent } from './components/profiles/profiles.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: 'bulkload',
     component: BulkloadComponent
+  },
+  {
+    path: 'products',
+    component: ProductsComponent
+  },
+  {
+    path: 'profiles',
+    component: ProfilesComponent
   }
 ];
 

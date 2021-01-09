@@ -33,11 +33,11 @@ export class NavbarComponent implements OnInit {
       name: "Good Actions"
     },
     {
-      link: '#',
+      link: '/products',
       name: "Products"
     },
     {
-      link: '#',
+      link: '/profiles',
       name: "Profiles"
     },
     {
