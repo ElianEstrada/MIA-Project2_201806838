@@ -9,7 +9,7 @@ export class LoginService {
   url: string;
 
   constructor(private httpClient: HttpClient) {
-    this.url = "http://localhost:3000/login"
+    this.url = "http://34.72.26.108:3000/login"
   }
 
   login(nickName, email, password) {

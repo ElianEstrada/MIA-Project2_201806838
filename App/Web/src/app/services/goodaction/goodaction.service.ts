@@ -9,7 +9,7 @@ export class GoodactionService {
   url: string;
 
   constructor(private httpClient: HttpClient) { 
-    this.url = "http://localhost:3000/goodaction";
+    this.url = "http://34.72.26.108:3000/goodaction";
   }
 
   add(name: string, description: string, reward: number, age: number){

@@ -9,7 +9,7 @@ export class BulkloadService {
   url: string;
 
   constructor(private httpClient: HttpClient) { 
-    this.url = "http://localhost:3000/load"
+    this.url = "http://34.72.26.108:3000/load"
   }
 
   load(file: File){
