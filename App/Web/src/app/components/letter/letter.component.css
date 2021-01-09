@@ -1,0 +1,25 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    color: rgb(255, 255, 255);
+}
+
+.modal__content{
+    overflow: hidden;
+    min-width: 70vw;
+}
+
+.modal__content input{
+    color:rgb(255, 255, 255);
+}
+
+a{
+    cursor: pointer;
+}
+
+h1{
+    display: inline-block;
+}

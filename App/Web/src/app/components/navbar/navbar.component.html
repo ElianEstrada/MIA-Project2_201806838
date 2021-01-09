@@ -24,6 +24,16 @@
           <a class="dropdown-trigger" href="#!" data-target="session">Session <i class="material-icons right">arrow_drop_down</i></a>
         </li>
       </ul>
+      <ul class="right hide-on-med-and-down" *ngIf="child">
+        <li *ngFor="let item of childs">
+          <a [routerLink]="[item.link]" routerLinkActive="router-link-active">
+            {{ item.name }}
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-trigger" href="#!" data-target="session">Session <i class="material-icons right">arrow_drop_down</i></a>
+        </li>
+      </ul>
       <ul id="session" class="dropdown-content">
         <li><a>Profile</a></li>
         <li class="divider"></li>

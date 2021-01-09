@@ -7,6 +7,12 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { BulkloadComponent } from './components/bulkload/bulkload.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
+import { GoodactionComponent } from './components/goodaction/goodaction.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { HomechildComponent } from './components/homechild/homechild.component';
+import { ActionchildComponent } from './components/actionchild/actionchild.component';
+import { LetterComponent } from './components/letter/letter.component';
+import { PostComponent } from './components/post/post.component';
 
 const routes: Routes = [
   {
@@ -40,6 +46,30 @@ const routes: Routes = [
   {
     path: 'profiles',
     component: ProfilesComponent
+  },
+  {
+    path: 'goodaction',
+    component: GoodactionComponent
+  },
+  {
+    path: 'reports',
+    component: ReportsComponent
+  },
+  {
+    path: 'homechild',
+    component: HomechildComponent
+  },
+  {
+    path: 'child/goodaction',
+    component: ActionchildComponent
+  },
+  {
+    path: 'letter',
+    component: LetterComponent
+  },
+  {
+    path: 'post',
+    component: PostComponent
   }
 ];
 

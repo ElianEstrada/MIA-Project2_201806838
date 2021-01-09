@@ -1,0 +1,13 @@
+.content__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    color: white;
+}
+
+ul li{
+    max-height: 50vh;
+    overflow: auto;
+}

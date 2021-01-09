@@ -8,6 +8,10 @@ const loginRouter = require('./routes/login.router');
 const departmentRouter = require('./routes/department.route');
 const loadRouter = require('./routes/load.route');
 const productRouter = require('./routes/product.route');
+const goodActionRouter = require('./routes/goodAction.route');
+const reportRouter = require('./routes/report.route');
+const letterRouter = require('./routes/letter.route');
+const postRouter = require('./routes/post.route');
 
 var app = express();
 app.use(cors())
@@ -20,6 +24,10 @@ app.use("", loginRouter);
 app.use("", departmentRouter);
 app.use("/load", loadRouter);
 app.use("/products", productRouter);
+app.use("/goodaction", goodActionRouter);
+app.use("/reports", reportRouter);
+app.use("/letters", letterRouter);
+app.use("/post", postRouter);
 
 const port = 3000;
 

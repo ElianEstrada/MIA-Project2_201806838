@@ -39,7 +39,6 @@ testem.log
 Thumbs.db
 
 *.spec.ts
-App/Web/src/environments
 App/Web/src/test.ts
 
 *.csv

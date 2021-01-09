@@ -16,6 +16,12 @@ import { PrincipalComponent } from './components/principal/principal.component';
 import { BulkloadComponent } from './components/bulkload/bulkload.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProfilesComponent } from './components/profiles/profiles.component';
+import { GoodactionComponent } from './components/goodaction/goodaction.component';
+import { ReportsComponent } from './components/reports/reports.component';
+import { HomechildComponent } from './components/homechild/homechild.component';
+import { ActionchildComponent } from './components/actionchild/actionchild.component';
+import { LetterComponent } from './components/letter/letter.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { ProfilesComponent } from './components/profiles/profiles.component';
     PrincipalComponent,
     BulkloadComponent,
     ProductsComponent,
-    ProfilesComponent
+    ProfilesComponent,
+    GoodactionComponent,
+    ReportsComponent,
+    HomechildComponent,
+    ActionchildComponent,
+    LetterComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

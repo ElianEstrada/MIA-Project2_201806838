@@ -2,7 +2,9 @@ const dataB = require("../config/oracleConnection");
 
 exports.login = async (req, res) => {
   const { nickName, email, password } = req.body;
-
+  console.log(nickName);
+  console.log(email);
+  console.log(password);
   if (nickName === undefined) {
     console.log("this father");
     let query = `select * from USERS where email = '${email}' and password = '${password}'`;

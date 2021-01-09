@@ -1,0 +1,110 @@
+<app-navbar [child]="true"></app-navbar>
+<div class="container content">
+    <div>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal indigo darken-4 modal__content">
+        <div class="modal-content">
+          <div>
+              <div class="row form__content">
+                <form class="col s12">
+                  <div class="row form__content__input">
+                      <h1><b> Registry </b></h1>
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <i class="material-icons prefix white-text">short_text</i>
+                        <input
+                          placeholder="Name"
+                          name="name"
+                          [(ngModel)] = "name"
+                          type="text"
+                          class="validate"
+                        />
+                      </div>
+                      <div class="input-field col l6 s12">
+                        <i class="material-icons prefix white-text">insert_invitation</i>
+                        <input
+                          placeholder="Date Letter"
+                          name="date"
+                          [(ngModel)] = "date"
+                          type="date"
+                          class="validate"
+                        />
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix white-text">text_snippet</i>
+                        <input
+                          placeholder="Body"
+                          name="body"
+                          [(ngModel)]="body"
+                          type="text"
+                          class="validate"
+                        />
+                      </div>
+                    <div class="row">
+                      <div class="row">
+                        <div>
+                          <button
+                            class="btn-large waves-effect waves-light green modal-close"
+                            [disabled] = "name === '' || body === ''
+                            || date === ''"
+                          >
+                            Registry
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div [hidden] ="true">
+                    <div class="red">
+                      <h4>
+                        Error in to Registry
+                      </h4>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h1>Letters</h1>
+    </div>
+    <div class="card z-depth-3 grey darken-4">
+      <table class="striped responsive-table centered">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Body</th>
+            <th>Date Letter</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of letters; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.body }}</td>
+            <td>{{ item.date }}</td>
+            <td>
+              <a href="#modal1" class="modal-trigger" title="show Products"
+                ><i class="material-icons green-text text-darken-4"> visibility </i></a
+              >
+              <a title="add Products" 
+                ><i class="material-icons blue-text"> add </i></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="fixed-action-btn">
+          <a href="#modal1" class="btn-floating btn-large blue darken-4 modal-trigger" title="Add">
+            <i class="large material-icons">add</i>
+          </a>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,46 @@
+<app-navbar [child]="true"></app-navbar>
+<div>
+    <div class="container content">
+
+        <div class="row">
+            <h1>Good Actions</h1>
+          </div>
+          <div class="card z-depth-3 grey darken-4">
+            <table class="striped responsive-table centered">
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Reward</th>
+                  <th>Recommended Age</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of actions; index as i">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.description }}</td>
+                  <td>{{ item.reward }}</td>
+                  <td>{{ item.age }}</td>
+                  <td>
+                    <button class="btn blue" (click)="add(item)" title="Confirmed"
+                    [disabled] = "!((budget - noCanes) > item.reward)"
+                      > Realized </button
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large blue darken-4 modal-trigger" title="Canes">
+                  <i class="large material-icons">light_mode</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating red"> {{noCanes}} </a></li>
+                  </ul>
+              </div>
+          </div>
+    </div>
+</div>

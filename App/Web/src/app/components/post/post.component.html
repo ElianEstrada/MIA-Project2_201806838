@@ -1,0 +1,16 @@
+<app-navbar [child]="true"></app-navbar>
+<div class="container">
+    <ul class="collapsible popout content__list">
+        <h1><b>Reports</b></h1>
+        <li class="active" *ngFor = "let item of posts; index as i">
+            <div class="collapsible-header indigo darken-4">
+                <i class="material-icons">filter_{{i + 1}}</i> {{item.subject}}
+              </div>
+              <div class="collapsible-body card z-depth-3 grey darken-4">
+                <div class="card-content">
+                    <p> {{item.body}} </p>
+                </div>
+              </div>
+        </li>
+      </ul>
+</div>

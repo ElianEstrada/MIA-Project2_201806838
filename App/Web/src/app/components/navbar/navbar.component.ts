@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
       name: "Bulk Load"
     },
     {
-      link: '#',
+      link: '/goodaction',
       name: "Good Actions"
     },
     {
@@ -41,8 +41,27 @@ export class NavbarComponent implements OnInit {
       name: "Profiles"
     },
     {
-      link: '#',
+      link: '/reports',
       name: "Reports"
+    }
+  ]
+
+  childs = [
+    {
+      link: '/child/goodaction',
+      name: "Good Actions"
+    },
+    {
+      link: '/letter',
+      name: "Letters"
+    },
+    {
+      link: '/post',
+      name: "Santa Activity"
+    },
+    {
+      link: '#!',
+      name: "Messenger Service"
     }
   ]
 
